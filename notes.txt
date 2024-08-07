@@ -1,0 +1,3 @@
+This is a text document that is just for my personal notes, thoughts, and realizations along the way while implementing this project. 
+
+Currently I am in the develop branch and I ran the command of npm init -y. This created a default file pachage.json. As of right now I do not quite know what this file does, why it is important. I looked up online, and they said that it was a file that "sets up a node project". Then it appears as if there are default values in this file. Possibly this is the "settings of the node js project"?
