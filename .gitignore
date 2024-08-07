@@ -1,4 +1,10 @@
 #git ignore file copy and pasted from GPT (will need to look over, understand, and possibly revise) (this is a test modification)
+
+#ignore node_modules
+node_modules/
+
+.env
+
 # Logs
 logs
 *.log
