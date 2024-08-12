@@ -3,7 +3,28 @@ const router = express.Router();
 
 //middleware functions that service api requests
 router.get('', (req, res) => {
+    const locals = {
+        title: "NodeJs Blog",
+        description: "A simple blog that I am making to practice my skills with express, nodejs, and mongodb."
+    }
+
+    //Notice how I am able to pass in two arguments. This will go to the main.ejs template, and then inside of the main.ejs file I use those <%= xxxx %> 
+    //to be able to place in variables into that specific location in order to costomize it. In this instance I can do <%= locals.description %> to 
+    //access the description field.
+    res.render('index', {locals});
+})
+
+router.get('', (req, res) => {
     res.render('index');
+})
+
+//seems as if when I do this render, I am able to put the 'render' as an argument. This will tell the '/about' api (this api) to 
+//utilize the about.ejs file. So previously in the app.js, we told express to set 'layout' to be directed to the ./views/layouts/main.ejs (actually we did not need to set the views directory, even though the file is in views)
+//This seems to be the main layout that we will render and show to the user when the user requests this /about api and all other apis. But
+//because we pass in 'about' as a parameter, in the main.ejs, we are able to speficy a folder that has content that will costomize the standard 
+//template that we are using in the main.ejs 
+router.get('/about', (req, res) =>{
+    res.render('about')
 })
 /*
 router.get('/test_api', (req, res) => {
