@@ -4,10 +4,15 @@ require('dotenv').config();
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
 
+const connectDB = require('./server/config/db');
+
 //Express is a service that allows handling of HTTP requests
 const app  = express();
 //PORT will be set to 8080 or the PORT specified in the process.env
 const PORT = 8080 || process.env.PORT;
+
+//connect the database
+connectDB();
 
 //This function will tell app (express) to look in 'public' as the folder location, to find static files (static files are those css, html, JS, ect) 
 //This allows the client to access the files within 'public' and because the files are not dynamic, 
