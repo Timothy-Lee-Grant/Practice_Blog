@@ -26,6 +26,11 @@ router.get('', (req, res) => {
 router.get('/about', (req, res) =>{
     res.render('about')
 })
+
+//not working
+router.get('/contact',(req, res)=>{
+    res.render('contact')
+})
 /*
 router.get('/test_api', (req, res) => {
     res.send("Is this the one that you wanted?")
